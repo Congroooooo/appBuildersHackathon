@@ -1,0 +1,10 @@
+node_modules/
+dist/
+release/
+tmp/
+test-results/*.png
+*.db
+*.db-wal
+*.db-shm
+*.key
+.env*

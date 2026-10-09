@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Continuum page context",
+  "version": "0.1.0",
+  "description": "Sends the title, headings, a short excerpt and highlighted text of pages you read to Continuum on this computer (native messaging, no network).",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp/jHj9nNsmdHMOizVdXDXnEk/TTXI9vC2MwvZ90ANrPmLO5skBC+oDkfsQI8gZClqJ8sCxAc82pIoW4ieY45Ip/RhD8JHyJqtOY4q8j8SwkjBAx5RSB8J+BFTrJfnR1OeaT/joWDkdOenlmXBv2k+UAzcg/n8aNsNJF+nzSnJzTtALHT52Kzn5R/fgvb38IpWtb12YEnp5frTa3h0NZjq8DcBLy2Mj5OsWwcP/gI/HzoMRjKVzw1qTAziR3nHRTI89Dl6QnvFKTO3Exe+fsn3efE3187Y8E8Ubx1q6Eo/oV5TQX+DRY63iAKhJSaArSoXJOj5ZH7IQmn5A400E1pbwIDAQAB",
+  "permissions": [
+    "nativeMessaging"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "incognito": "not_allowed"
+}
